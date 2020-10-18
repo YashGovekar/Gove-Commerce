@@ -9,7 +9,6 @@ enabled:
   # - mb_str_functions
   - modernize_types_casting
   # - native_function_invocation
-  - no_blank_lines_after_return
   - no_homoglyph_names
   - no_php4_constructor
   - no_useless_else

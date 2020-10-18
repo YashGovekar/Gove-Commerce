@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\ValidationException;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
 
 class CreateNewUser implements CreatesNewUsers
@@ -17,7 +18,10 @@ class CreateNewUser implements CreatesNewUsers
      * Create a newly registered user.
      *
      * @param array $input
+     *
      * @return \App\Models\User
+     *
+     * @throws ValidationException
      */
     public function create(array $input)
     {
@@ -42,6 +46,7 @@ class CreateNewUser implements CreatesNewUsers
      * Create a personal team for the user.
      *
      * @param \App\Models\User $user
+     *
      * @return void
      */
     protected function createTeam(User $user)

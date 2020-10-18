@@ -16,9 +16,9 @@ class UpdateTeamName implements UpdatesTeamNames
      * @param mixed $team
      * @param array $input
      *
-     * @return void
-     *
      * @throws AuthorizationException
+     *
+     * @return void
      */
     public function update($user, $team, array $input)
     {

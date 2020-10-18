@@ -14,10 +14,10 @@ class AddTeamMember implements AddsTeamMembers
     /**
      * Add a new team member to the given team.
      *
-     * @param mixed        $user
-     * @param mixed        $team
-     * @param string       $email
-     * @param string|null  $role
+     * @param mixed       $user
+     * @param mixed       $team
+     * @param string      $email
+     * @param string|null $role
      *
      * @return void
      */
@@ -38,9 +38,9 @@ class AddTeamMember implements AddsTeamMembers
     /**
      * Validate the add member operation.
      *
-     * @param mixed        $team
-     * @param string       $email
-     * @param string|null  $role
+     * @param mixed       $team
+     * @param string      $email
+     * @param string|null $role
      *
      * @return void
      */

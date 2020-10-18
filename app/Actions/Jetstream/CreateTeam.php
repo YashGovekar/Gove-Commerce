@@ -2,6 +2,7 @@
 
 namespace App\Actions\Jetstream;
 
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Jetstream\Contracts\CreatesTeams;
@@ -15,9 +16,9 @@ class CreateTeam implements CreatesTeams
      * @param mixed $user
      * @param array $input
      *
-     * @return mixed
+     * @throws AuthorizationException
      *
-     * @throws \Illuminate\Auth\Access\AuthorizationException
+     * @return mixed
      */
     public function create($user, array $input)
     {

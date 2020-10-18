@@ -25,8 +25,8 @@ class TeamPolicy
     /**
      * Determine whether the user can view the model.
      *
-     * @param \App\Models\User  $user
-     * @param \App\Models\Team  $team
+     * @param \App\Models\User $user
+     * @param \App\Models\Team $team
      *
      * @return mixed
      */
@@ -50,8 +50,8 @@ class TeamPolicy
     /**
      * Determine whether the user can update the model.
      *
-     * @param \App\Models\User  $user
-     * @param \App\Models\Team  $team
+     * @param \App\Models\User $user
+     * @param \App\Models\Team $team
      *
      * @return mixed
      */
@@ -63,8 +63,8 @@ class TeamPolicy
     /**
      * Determine whether the user can add team members.
      *
-     * @param \App\Models\User  $user
-     * @param \App\Models\Team  $team
+     * @param \App\Models\User $user
+     * @param \App\Models\Team $team
      *
      * @return mixed
      */
@@ -76,8 +76,8 @@ class TeamPolicy
     /**
      * Determine whether the user can update team member permissions.
      *
-     * @param \App\Models\User  $user
-     * @param \App\Models\Team  $team
+     * @param \App\Models\User $user
+     * @param \App\Models\Team $team
      *
      * @return mixed
      */
@@ -89,8 +89,8 @@ class TeamPolicy
     /**
      * Determine whether the user can remove team members.
      *
-     * @param \App\Models\User  $user
-     * @param \App\Models\Team  $team
+     * @param \App\Models\User $user
+     * @param \App\Models\Team $team
      *
      * @return mixed
      */
@@ -102,8 +102,8 @@ class TeamPolicy
     /**
      * Determine whether the user can delete the model.
      *
-     * @param \App\Models\User  $user
-     * @param \App\Models\Team  $team
+     * @param \App\Models\User $user
+     * @param \App\Models\Team $team
      *
      * @return mixed
      */

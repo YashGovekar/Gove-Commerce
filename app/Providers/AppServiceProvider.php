@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Inertia\Inertia;
+use Session;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +25,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Inertia::share('flash', function () {
+            return [
+                'message' => Session::get('message'),
+                'alert'   => Session::get('alert'),
+            ];
+        });
     }
 }

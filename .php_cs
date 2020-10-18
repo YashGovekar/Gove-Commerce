@@ -2,7 +2,9 @@
 
 $finder = PhpCsFixer\Finder::create()
     ->in('app')
-    ->in('config');
+    ->in('config')
+    ->in('resources')
+    ->in('database');
 
 return PhpCsFixer\Config::create()
     ->setHideProgress(true)

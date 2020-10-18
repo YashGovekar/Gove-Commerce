@@ -2,6 +2,7 @@
 
 namespace App\Actions\Jetstream;
 
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Jetstream\Contracts\UpdatesTeamNames;
@@ -14,7 +15,10 @@ class UpdateTeamName implements UpdatesTeamNames
      * @param mixed $user
      * @param mixed $team
      * @param array $input
+     *
      * @return void
+     *
+     * @throws AuthorizationException
      */
     public function update($user, $team, array $input)
     {

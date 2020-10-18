@@ -17,6 +17,7 @@ public_html/hot
 
 storage/*.key
 .env
+_ide_helper.php
 Homestead.yaml
 Homestead.json
 /.vagrant

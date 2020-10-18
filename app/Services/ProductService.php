@@ -27,12 +27,12 @@ class ProductService
         $this->productRepo = $productRepo;
     }
 
-    public function getAll() :Collection
+    public function getAll(): Collection
     {
         return $this->productRepo->getAllProducts();
     }
 
-    public function get(int $id) :array
+    public function get(int $id): array
     {
         $product = Product::find($id);
         $product['images'] = $product->images;

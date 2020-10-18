@@ -16,11 +16,11 @@ class Product extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name', 'description', 'price', 'ratings', 'created_at', 'updated_at'
+        'name', 'description', 'price', 'ratings', 'created_at', 'updated_at',
     ];
 
     public function images()
     {
-        $this->hasMany('App\Models\ProductImage');
+        return $this->hasMany('App\Models\ProductImage');
     }
 }

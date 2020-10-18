@@ -17,7 +17,7 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('name', 50);
             $table->mediumText('description');
-            $table->decimal('price', 9 ,2);
+            $table->decimal('price', 9, 2);
             $table->integer('ratings')->default(5);
             $table->timestamps();
         });

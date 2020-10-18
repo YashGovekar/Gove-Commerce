@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Contracts\Controller;
-use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
 

@@ -8,6 +8,8 @@ VueJS version   : `v3.0.1`
 # Installation
 
 git clone https://github.com/YashGovekar/Laravel-VueJS-Shop
+
 cd Laravel-VueJS-Shop
+
 composer install
 

@@ -13,7 +13,7 @@ class ProductRepository
         return $product;
     }
 
-    public function getAllProducts() :Collection
+    public function getAllProducts(): Collection
     {
         $products = Product::all();
         foreach ($products as $product) {

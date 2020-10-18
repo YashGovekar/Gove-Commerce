@@ -74,7 +74,7 @@ class ProductController extends Controller
     {
         $product = $this->productSvc->get($id);
         return Inertia::render('Products/Admin/Show', [
-            'product' => $product
+            'product' => $product,
         ]);
     }
 
@@ -82,7 +82,7 @@ class ProductController extends Controller
     {
         $product = $this->productSvc->get($id);
         return Inertia::render('Products/Admin/Edit', [
-            'product' => $product
+            'product' => $product,
         ]);
     }
 

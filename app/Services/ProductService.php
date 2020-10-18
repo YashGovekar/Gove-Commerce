@@ -70,6 +70,7 @@ class ProductService
     public function destroy(int $id): bool
     {
         $product = Product::find($id);
+
         try {
             $product->delete();
             return true;

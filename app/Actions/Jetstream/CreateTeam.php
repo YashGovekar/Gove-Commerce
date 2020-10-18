@@ -25,7 +25,7 @@ class CreateTeam implements CreatesTeams
         ])->validateWithBag('createTeam');
 
         return $user->ownedTeams()->create([
-            'name' => $input['name'],
+            'name'          => $input['name'],
             'personal_team' => false,
         ]);
     }

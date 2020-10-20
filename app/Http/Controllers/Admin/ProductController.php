@@ -67,7 +67,7 @@ class ProductController extends Controller
                 'alert'   => 'error',
             ]);
         }
-        return Redirect::route('products');
+        return Redirect::route('admin.products');
     }
 
     public function show(int $id): Response
@@ -100,16 +100,16 @@ class ProductController extends Controller
                 'alert'   => 'error',
             ]);
         }
-        return Redirect::route('products');
+        return Redirect::route('admin.products');
     }
 
-    public function destroy(int $id): Response
+    public function destroy(int $id): RedirectResponse
     {
         $this->productSvc->destroy($id);
         Session::put([
             'message' => 'Product deleted successfully!',
             'alert'   => 'success',
         ]);
-        return $this->index();
+        return Redirect::route('admin.products');
     }
 }

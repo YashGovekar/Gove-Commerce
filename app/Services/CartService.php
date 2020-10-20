@@ -10,7 +10,6 @@ use Log;
 
 /**
  * Class CartService
- * @package App\Services
  */
 class CartService
 {
@@ -49,7 +48,7 @@ class CartService
     }
 
     /**
-     * @param int $id
+     * @param int   $id
      * @param array $array
      *
      * @return bool
@@ -70,7 +69,7 @@ class CartService
     {
         try {
             Cart::where([
-                'user_id' => $id
+                'user_id' => $id,
             ])->delete();
             return true;
         } catch (Exception $e) {

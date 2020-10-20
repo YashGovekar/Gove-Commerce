@@ -10,7 +10,6 @@ use Inertia\Response;
 
 /**
  * Class CartController
- * @package App\Http\Controllers\Frontend
  */
 class CartController extends Controller
 {

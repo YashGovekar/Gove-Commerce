@@ -7,7 +7,6 @@ use Illuminate\Support\Collection;
 
 /**
  * Class CartRepository
- * @package App\Repositories
  */
 class CartRepository
 {

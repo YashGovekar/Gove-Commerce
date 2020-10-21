@@ -15,6 +15,7 @@ class OrderController
 
     /**
      * OrderController constructor.
+     *
      * @param OrderService $orderSvc
      */
     public function __construct(OrderService $orderSvc)

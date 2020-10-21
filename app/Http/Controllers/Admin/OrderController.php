@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Http\Controllers\Admin;
-
 
 use App\Services\OrderService;
 use Inertia\Inertia;

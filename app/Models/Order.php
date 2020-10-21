@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Order
+ *
  * @mixin Eloquent
  */
 class Order extends Model

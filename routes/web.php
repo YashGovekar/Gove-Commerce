@@ -20,7 +20,6 @@ use Illuminate\Support\Facades\Route;
  *
  * @var string
  */
-
 $namespace = 'App\Http\Controllers\Frontend';
 
 Route::namespace($namespace)->group(function () {
@@ -91,4 +90,3 @@ Route::namespace($namespace)->group(function () {
         return Inertia\Inertia::render('Dashboard');
     })->name('dashboard');
 });
-

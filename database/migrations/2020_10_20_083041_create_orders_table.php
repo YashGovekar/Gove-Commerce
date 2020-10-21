@@ -20,6 +20,7 @@ class CreateOrdersTable extends Migration
             $table->mediumText('items');
             $table->decimal('total', 9, 2);
             $table->decimal('sub_total', 9, 2);
+            $table->integer('status')->default(0);
             $table->foreignId('discount_id')->nullable()->references('id')->on('discounts');
             $table->timestamps();
         });

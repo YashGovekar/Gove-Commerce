@@ -3,29 +3,26 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Contracts\Controller;
-use App\Services\CartService;
+use App\Services\WishlistService;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
 
-/**
- * Class CartController
- */
-class CartController extends Controller
+class WishlistController extends Controller
 {
     /**
-     * @var CartService
+     * @var WishlistService
      */
-    private $cartSvc;
+    private $wishlistSvc;
 
     /**
-     * CartController constructor.
+     * WishlistController constructor.
      *
-     * @param CartService $cartSvc
+     * @param WishlistService $wishlistSvc
      */
-    public function __construct(CartService $cartSvc)
+    public function __construct(WishlistService $wishlistSvc)
     {
-        $this->cartSvc = $cartSvc;
+        $this->wishlistSvc = $wishlistSvc;
     }
 
     /**
@@ -33,7 +30,7 @@ class CartController extends Controller
      */
     public function index(): Response
     {
-        return Inertia::render('Cart/Index');
+        return Inertia::render('Wishlist/Index');
     }
 
     /**
@@ -43,8 +40,8 @@ class CartController extends Controller
      */
     public function store(Request $request): Response
     {
-        $this->cartSvc->storeCart($request->all());
-        return Inertia::render('Cart/Index');
+        $this->wishlistSvc->storeWishlist($request->all());
+        return Inertia::render('Wishlist/Index');
     }
 
     /**
@@ -55,8 +52,8 @@ class CartController extends Controller
      */
     public function update($id, Request $request): Response
     {
-        $this->cartSvc->updateCart($id, $request->all());
-        return Inertia::render('Cart/Index');
+        $this->wishlistSvc->updateWishlist($id, $request->all());
+        return Inertia::render('Wishlist/Index');
     }
 
     /**
@@ -66,7 +63,7 @@ class CartController extends Controller
      */
     public function destroy($id): Response
     {
-        $this->cartSvc->destroyCart($id);
-        return Inertia::render('Cart/Index');
+        $this->wishlistSvc->destroyWishlist($id);
+        return Inertia::render('Wishlist/Index');
     }
 }

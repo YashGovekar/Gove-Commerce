@@ -1,24 +1,23 @@
-require('./bootstrap');
+require('bootstrap');
+window.jQuery = window.$ = require('jquery');
 
+import { App, plugin } from '@inertiajs/inertia-vue';
 import Vue from 'vue';
+import VueMeta from "vue-meta";
 
-import { InertiaApp } from '@inertiajs/inertia-vue';
-import { InertiaForm } from 'laravel-jetstream';
-import PortalVue from 'portal-vue';
+Vue.use(plugin);
+Vue.use(VueMeta);
 
-Vue.mixin({ methods: { route } });
-Vue.use(InertiaApp);
-Vue.use(InertiaForm);
-Vue.use(PortalVue);
-
-const app = document.getElementById('app');
+const el = document.getElementById('app')
 
 new Vue({
-    render: (h) =>
-        h(InertiaApp, {
-            props: {
-                initialPage: JSON.parse(app.dataset.page),
-                resolveComponent: (name) => require(`./Pages/${name}`).default,
-            },
-        }),
-}).$mount(app);
+    metaInfo: {
+        titleTemplate: (title) => title ? `${title} - ${process.env.MIX_APP_NAME}` : process.env.MIX_APP_NAME
+    },
+    render: h => h(App, {
+        props: {
+            initialPage: JSON.parse(el.dataset.page),
+            resolveComponent: name => require(`./Pages/${name}`).default,
+        },
+    }),
+}).$mount(el)

@@ -25,7 +25,9 @@ $namespace = 'App\Http\Controllers\Frontend';
 Route::namespace($namespace)->group(function () {
 
     /* Routes for HomePage */
-    Route::get('/', 'HomeController@index')->name('home.index');
+    Route::get('/', function () {
+        return Inertia\Inertia::render('Home');
+    })->name('home.index');
 
     /* Routes For Products */
     Route::prefix('products')

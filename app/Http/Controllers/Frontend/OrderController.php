@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Contracts\Controller;
 use App\Services\OrderService;
 use Inertia\Inertia;
 use Inertia\Response;
 
-class OrderController
+class OrderController extends Controller
 {
     /**
      * @var OrderService

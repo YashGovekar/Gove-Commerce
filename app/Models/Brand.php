@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * Class Brand
+ *
  * @mixin Eloquent
  */
 class Brand extends Model

@@ -7,7 +7,7 @@ use Illuminate\Support\Collection;
 
 class ProductRepository
 {
-    public function sortProduct($product): Object
+    public function sortProduct($product): object
     {
         $product['images'] = $product->images;
         $product['brand'] = $product->brand;
@@ -24,7 +24,7 @@ class ProductRepository
         return $products;
     }
 
-    public function getProduct(int $id): Object
+    public function getProduct(int $id): object
     {
         $product = Product::find($id);
         return $this->sortProduct($product);

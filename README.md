@@ -1,6 +1,6 @@
 # Laravel-VueJS-Shop
 
-## Under Construction!
+## UNDER CONSTRUCTION!
 Shop Managment System based on Laravel &amp; VueJS
 
 Laravel version : `v8.10.0`

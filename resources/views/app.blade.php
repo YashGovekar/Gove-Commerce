@@ -7,12 +7,10 @@
 
         <title>{{ config('app.name', 'Shop') }}</title>
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
-
         <!-- Scripts -->
-        @routes
         <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.26.0/moment.min.js"></script>
+        <link href="{{ mix('css/app.min.css') }}"  rel="stylesheet"></link>
+        <link href="{{ mix('css/app.css') }}"  rel="stylesheet"></link>
         <script src="{{ mix('js/app.js') }}" defer></script>
     </head>
     <body>

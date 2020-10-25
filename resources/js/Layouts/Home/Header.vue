@@ -31,7 +31,7 @@
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="logo pull-left">
-                            <a href=""><img :src="require('./assets/images/home/logo.png')" alt="" /></a>
+                            <a href=""><img :src="require('../../../images/home/logo.png')" alt="" /></a>
                         </div>
                         <div class="btn-group pull-right">
                             <div class="btn-group">

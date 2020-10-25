@@ -12,3 +12,16 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js');
+mix.combine([
+    'resources/css/bootstrap.min.css',
+    'resources/css/font-awesome.min.css',
+], 'public/css/app.min.css');
+mix.styles([
+    'resources/css/animate.css',
+    'resources/css/main.css',
+    'resources/css/prettyPhoto.css',
+    'resources/css/price-range.css',
+], 'public/css/app.css');
+mix.copyDirectory('resources/fonts', 'public/fonts');
+mix.copyDirectory('resources/images', 'public/images');
+

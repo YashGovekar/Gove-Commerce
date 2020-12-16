@@ -37,7 +37,7 @@
         "vue-meta": "^2.4.0",
         "vue-plugin-load-script": "^1.3.2",
         "vue-star-rating": "^1.6.1",
-        "vuex": "^3.5.1",
+        "vuex": "^3.6.0",
         "vuex-persist": "^2.2.0"
     }
 }

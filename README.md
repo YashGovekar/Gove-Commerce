@@ -1,7 +1,7 @@
-# Laravel-VueJS-Shop
+# Gove-Commerce Shop
 
 ## UNDER CONSTRUCTION!
-Shop Managment System based on Laravel, Wordpress &amp; VueJS
+Shop Managment System based on Laravel, WordPress &amp; VueJS
 
 Laravel version : `v10.38.2`
 
@@ -11,13 +11,13 @@ VueJS version   : `v3.3.13`
 
 1st Step : Run the Following commands in the folder where you want to install the Shop :
 
-`git clone https://github.com/YashGovekar/Laravel-VueJS-Shop`
+`git clone https://github.com/YashGovekar/Gove-Commerce`
 
-`cd Laravel-VueJS-Shop`
+`cd Gove-Commerce`
 
-`composer install`
+`composer install && npm install`
 
-Now set the domain's path to the `Directory you used in 1st Step/Laravel-VueJS-Shop/public`
+Now set the domain's path to the `{Directory you used in 1st Step}/Gove-Commerce/public`
 
 Follow the Installer.
 

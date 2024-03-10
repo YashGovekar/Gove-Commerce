@@ -17,7 +17,7 @@ VueJS version   : `v3.3.13`
 
 `composer install && npm install`
 
-Now set the domain's path to the `{Directory you used in 1st Step}/Gove-Commerce/public`
+Now set the domain's path to the `{DIRECTORY_USED_IN_FIRST_STEP}/Gove-Commerce/public`
 
 Follow the Installer.
 

@@ -9,15 +9,21 @@ VueJS version   : `v3.3.13`
 
 # Installation
 
-1st Step : Run the Following commands in the folder where you want to install the Shop :
+- Run the Following commands in the folder where you want to install the Shop :
 
-`git clone https://github.com/YashGovekar/Gove-Commerce`
+- `git clone https://github.com/YashGovekar/Gove-Commerce`
 
-`cd Gove-Commerce`
+- `cd Gove-Commerce`
 
-`composer install && npm install`
+- `composer install && npm install`
 
-Now set the domain's path to the `{DIRECTORY_USED_IN_FIRST_STEP}/Gove-Commerce/public`
+- `git clone https://github.com/WordPress/WordPress.git wordpress`
+
+- `php artisan storage:link`
+
+- Now set the domain's path to the `{DIRECTORY_USED_IN_FIRST_STEP}/Gove-Commerce/public`
+
+- Head over to `{YOUR_DOMAIN}/cms` &amp; start installation of WordPress
 
 Follow the Installer.
 

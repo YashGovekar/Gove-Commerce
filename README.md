@@ -1,11 +1,11 @@
 # Laravel-VueJS-Shop
 
 ## UNDER CONSTRUCTION!
-Shop Managment System based on Laravel &amp; VueJS
+Shop Managment System based on Laravel, Wordpress &amp; VueJS
 
 Laravel version : `v10.38.2`
 
-VueJS version   : `v2.6.12`
+VueJS version   : `v3.3.13`
 
 # Installation
 

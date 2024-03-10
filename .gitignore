@@ -5,8 +5,6 @@
 /public/storage
 /public/cms
 /wordpress
-!/wordpress/wp-content/plugins
-!/wordpress/wp-content/themes
 /storage/*.key
 /vendor
 .env

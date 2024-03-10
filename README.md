@@ -15,11 +15,7 @@ VueJS version   : `v3.3.13`
 
 - `cd Gove-Commerce`
 
-- `composer install && npm install`
-
-- `git clone https://github.com/WordPress/WordPress.git wordpress`
-
-- `php artisan storage:link`
+- `php artisan install:gove-commerce`
 
 - Now set the domain's path to the `{DIRECTORY_USED_IN_FIRST_STEP}/Gove-Commerce/public`
 

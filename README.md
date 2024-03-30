@@ -1,7 +1,7 @@
 # Gove-Commerce Shop
 
 ## UNDER CONSTRUCTION!
-Shop Managment System based on Laravel, WordPress &amp; VueJS
+Shop Management System based on Laravel, WordPress &amp; VueJS
 
 Laravel version : `v10.38.2`
 
@@ -14,6 +14,8 @@ VueJS version   : `v3.3.13`
 - `git clone https://github.com/YashGovekar/Gove-Commerce`
 
 - `cd Gove-Commerce`
+
+- Create a new file `.env` and copy contents of `.env.example` to `.env`
 
 - `php artisan install:gove-commerce`
 

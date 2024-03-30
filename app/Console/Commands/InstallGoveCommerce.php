@@ -4,7 +4,6 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Storage;
 use ZipArchive;
 
 class InstallGoveCommerce extends Command
@@ -46,38 +45,38 @@ class InstallGoveCommerce extends Command
                     $command = $command[0];
 
                     if (!$condition) {
-                        $this->info('Executing Command: '.$command);
-                        exec("$command", $output2 , $status);
+                        $this->info('Executing Command: ' . $command);
+                        exec("$command", $output2, $status);
                     } else {
                         $this->warn($message);
                     }
                 } else {
-                    $this->info('Executing Command: '.$command);
-                    exec("$command", $output2 , $status );
+                    $this->info('Executing Command: ' . $command);
+                    exec("$command", $output2, $status);
                 }
             }
         } else {
             $this->warn('exec function is not enabled for this project. Please check.');
             $confirmation = $this->confirm('Do you want to continue installation of this project and run dependencies command manually?', 'yes');
-            if (! $confirmation) {
+            if (!$confirmation) {
                 $this->error('Aborting installation!');
                 return Command::FAILURE;
             }
         }
 
         // Check if wordpress folder exists
-        if (! File::exists($wordpress_path)) {
+        if (!File::exists($wordpress_path)) {
             $this->error('Please install wordpress first!');
             return Command::FAILURE;
         }
 
         // Initialise Zip
-        $zip  = new ZipArchive();
+        $zip = new ZipArchive();
 
         // Begin extracting theme files
         $theme_zip = storage_path('wp-files/laravel-custom-theme.zip');
 
-        if (! File::exists($theme_zip)) {
+        if (!File::exists($theme_zip)) {
             $this->error('Theme Zip File Missing!');
             return Command::FAILURE;
         }
@@ -87,7 +86,7 @@ class InstallGoveCommerce extends Command
             $this->error('Themes Zip File Corrupted!');
             return Command::FAILURE;
         }
-        $zip->extractTo($wordpress_path.'/wp-content/themes');
+        $zip->extractTo($wordpress_path . '/wp-content/themes');
         $zip->close();
 
         $this->info('Gove-Commerce Theme Installed!');
@@ -95,7 +94,7 @@ class InstallGoveCommerce extends Command
 
         // Begin extracting plugin files
         $plugins_zip = storage_path('wp-files/laravel-custom-plugins.zip');
-        if (! File::exists($plugins_zip)) {
+        if (!File::exists($plugins_zip)) {
             $this->error('Plugins Zip File Missing!');
             return Command::FAILURE;
         }
@@ -104,17 +103,31 @@ class InstallGoveCommerce extends Command
             $this->error('Plugins Zip File Corrupted!');
             return Command::FAILURE;
         }
-        $zip->extractTo($wordpress_path.'/wp-content/plugins');
+        $zip->extractTo($wordpress_path . '/wp-content/plugins');
         $zip->close();
 
         $this->info('Gove-Commerce Plugins Installed!');
         // End extracting plugin files
 
+        $host = $this->ask('Please enter database host');
+        $database = $this->ask('Please enter database name');
+        $user = $this->ask('Please enter database user');
+        $password = $this->ask('Please enter database password');
+        $port = $this->ask('Please enter database port', 3306);
+
+        $this->updateEnvFile([
+            'DB_HOST' => $host,
+            'DB_PORT' => $port,
+            'DB_DATABASE' => $database,
+            'DB_USERNAME' => $user,
+            'DB_PASSWORD' => $password,
+        ]);
+
 
         // Check if user wants to manually run the commands as prompted above on Line: #45
         if (isset($confirmation)) {
             $commands_run_confirmation = false;
-            while (! $commands_run_confirmation) {
+            while (!$commands_run_confirmation) {
                 $commands_run_confirmation = $this->commandRun('You will now be asked to run the commands manually one by one. Please open a new terminal and put the commands one by one. Are you ready?');
             }
             $total_commands = count($commands);
@@ -133,11 +146,57 @@ class InstallGoveCommerce extends Command
             }
         }
 
+        $host = $this->ask('Please enter database host');
+        $database = $this->ask('Please enter database name');
+        $user = $this->ask('Please enter database user');
+        $password = $this->ask('Please enter database password');
+        $port = $this->ask('Please enter database port', 3306);
+
         return Command::SUCCESS;
     }
 
     private function commandRun($command): bool
     {
         return $this->confirm($command, 'yes');
+    }
+
+    private function updateEnvFile(array $data): void
+    {
+        // Read the contents of the .env file
+        $envFile = base_path('.env');
+        $contents = File::get($envFile);
+
+        // Split the contents into an array of lines
+        $lines = explode("\n", $contents);
+
+        // Loop through the lines and update the values
+        foreach ($lines as &$line) {
+            // Skip empty lines and comments
+            if (empty($line) || str_starts_with($line, '#')) {
+                continue;
+            }
+
+            // Split each line into key and value
+            $parts = explode('=', $line, 2);
+            $key = $parts[0];
+
+            // Check if the key exists in the provided data
+            if (isset($data[$key])) {
+            // Update the value
+                $line = $key . '=' . $data[$key];
+                unset($data[$key]);
+            }
+        }
+
+        // Append any new keys that were not present in the original file
+        foreach ($data as $key => $value) {
+            $lines[] = $key . '=' . $value;
+        }
+
+        // Combine the lines back into a string
+        $updatedContents = implode("\n", $lines);
+
+        // Write the updated contents back to the .env file
+        File::put($envFile, $updatedContents);
     }
 }

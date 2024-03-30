@@ -3,8 +3,8 @@
 /public/build
 /public/hot
 /public/storage
-/public/cms
-/wordpress
+/public/cms/*
+wordpress/*
 /storage/*.key
 /vendor
 .env

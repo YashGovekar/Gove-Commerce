@@ -36,6 +36,7 @@ class InstallGoveCommerce extends Command
             ['git clone https://github.com/WordPress/WordPress.git wordpress', File::exists($wordpress_path), 'Wordpress directory already exists!'],
             'php artisan storage:link',
         ];
+        $commands = [];
 
         if (is_callable('exec') && false === stripos(ini_get('disable_functions'), 'exec')) {
             foreach ($commands as $command) {
